@@ -1,0 +1,52 @@
+#define Cutter_PIN 26
+#define PUMP_PIN 25
+
+void setup()
+{
+    // Motor PWM Setup 
+    ledcAttach(Cutter_PIN, 5000, 8);
+
+    // Water Pump Setup
+    pinMode(PUMP_PIN, OUTPUT);
+    digitalWrite(PUMP_PIN, LOW);
+}
+
+//Cutter motor functions  high/medium
+
+void CutterHigh()
+{
+    ledcWrite(BLADE_PIN, 255);
+}
+
+
+void CutterMedium()
+{
+    ledcWrite(Cutter_PIN, 125);
+}
+
+// OFF
+void CutterOff()
+{
+    ledcWrite(Cutter_PIN, 0);
+}
+
+// Water Pump functions ON/OFF
+
+void pumpOn()
+{
+    digitalWrite(PUMP_PIN, HIGH);
+}
+
+void pumpOff()
+{
+    digitalWrite(PUMP_PIN, LOW);
+}
+
+// Spray for specific duration
+void spray(unsigned long duration)
+{
+    pumpOn();
+    delay(duration);
+    pumpOff();
+}
+
