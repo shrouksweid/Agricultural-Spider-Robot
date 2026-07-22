@@ -21,7 +21,8 @@ The Agricultural Spider Robot is a quadruped ESP32-based robot designed for agri
 * OLED Display
 * Water Pump
 * DC Motor (Grass Cutter)
-* LiPo Battery
+* 2S Rechargeable Li-ion Samsung 18650 Batteries
+ 
 
 ## Software Components
 
